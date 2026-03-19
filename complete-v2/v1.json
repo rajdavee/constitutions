@@ -1,0 +1,1772 @@
+{
+  "accessibility": [],
+  "audits": [
+    {
+      "description": "Auto-generated minimal audit to satisfy quality gate; edit as needed.",
+      "events": [
+        "decision.made"
+      ],
+      "id": "core_audit",
+      "required_fields": [
+        "actor",
+        "action",
+        "resource",
+        "timestamp"
+      ],
+      "retention": "90d"
+    }
+  ],
+  "components": [
+    {
+      "children": [
+        "Card content"
+      ],
+      "description": "A card component with accessibility features.",
+      "id": "AccessibleCard",
+      "props": [
+        "title",
+        "onClick"
+      ],
+      "type": "atom"
+    },
+    {
+      "children": [
+        "Badges",
+        "Title",
+        "Snippet",
+        "Metadata"
+      ],
+      "description": "A list view variant of a content card with horizontal layout.",
+      "id": "ListViewCard",
+      "props": [
+        "title",
+        "snippet"
+      ],
+      "type": "organism"
+    },
+    {
+      "children": [],
+      "description": "Snippet section for a content card, truncates to 3 lines.",
+      "id": "SnippetSection",
+      "props": [
+        "snippet"
+      ],
+      "type": "atom"
+    },
+    {
+      "children": [],
+      "description": "Title section for a content card, truncates to 2 lines.",
+      "id": "TitleSection",
+      "props": [
+        "title"
+      ],
+      "type": "atom"
+    }
+  ],
+  "created_at": "2026-03-19T04:41:26.836059Z",
+  "design_system": {
+    "animations": {
+      "duration_normal": "150ms",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "borders": {
+      "radius_md": "12px",
+      "radius_sm": "6px"
+    },
+    "colors": {
+      "accent": null,
+      "background": null,
+      "primary": null,
+      "secondary": null,
+      "surface": null,
+      "text": "#7B849A"
+    },
+    "spacing": {
+      "scale": [
+        16,
+        6,
+        8
+      ],
+      "unit": null
+    },
+    "typography": {
+      "body_size": "13px",
+      "font_family": null,
+      "heading_sizes": [],
+      "line_height": 1.6
+    }
+  },
+  "navigation": {
+    "routes": [],
+    "transitions": []
+  },
+  "pages": [
+    {
+      "id": "template-picker-modal",
+      "interactions": [],
+      "layout_description": "Modal with a 2-column grid of template selection buttons.",
+      "responsive": null,
+      "route": "",
+      "sections": [],
+      "title": "Transform Draft"
+    },
+    {
+      "id": "template-preview-modal",
+      "interactions": [],
+      "layout_description": "Modal displaying a preview of the transformed layout, with options to apply or cancel.",
+      "responsive": null,
+      "route": "",
+      "sections": [],
+      "title": "Preview Template"
+    }
+  ],
+  "policies": [
+    {
+      "action": "CREATE",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "container_CREATE_user",
+      "resource": "container",
+      "role": "user"
+    },
+    {
+      "action": "READ",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "container_READ_user",
+      "resource": "container",
+      "role": "user"
+    },
+    {
+      "action": "UPDATE",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "container_UPDATE_user",
+      "resource": "container",
+      "role": "user"
+    },
+    {
+      "action": "DELETE",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "container_DELETE_user",
+      "notes": "Soft delete only; 30-day retention. Must be paired with ApprovalPrompt.",
+      "resource": "container",
+      "role": "user"
+    },
+    {
+      "action": "LIST",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "container_LIST_user",
+      "resource": "container",
+      "role": "user"
+    },
+    {
+      "action": "SEARCH",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "container_SEARCH_user",
+      "resource": "container",
+      "role": "user"
+    },
+    {
+      "action": "CREATE",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "draft_CREATE_user",
+      "resource": "draft",
+      "role": "user"
+    },
+    {
+      "action": "READ",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "draft_READ_user",
+      "resource": "draft",
+      "role": "user"
+    },
+    {
+      "action": "UPDATE",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "draft_UPDATE_user",
+      "resource": "draft",
+      "role": "user"
+    },
+    {
+      "action": "DELETE",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "draft_DELETE_user",
+      "resource": "draft",
+      "role": "user"
+    },
+    {
+      "action": "READ",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "template_READ_user",
+      "resource": "template",
+      "role": "user"
+    },
+    {
+      "action": "APPLY",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "template_APPLY_user",
+      "resource": "template",
+      "role": "user"
+    },
+    {
+      "action": "READ",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "connector_READ_user",
+      "resource": "connector",
+      "role": "user"
+    },
+    {
+      "action": "SYNC",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "connector_SYNC_user",
+      "resource": "connector",
+      "role": "user"
+    },
+    {
+      "action": "CREATE",
+      "condition": "actor.role == 'admin'",
+      "effect": "allow",
+      "id": "connector_CREATE_admin",
+      "resource": "connector",
+      "role": "admin"
+    },
+    {
+      "action": "UPDATE",
+      "condition": "actor.role == 'admin'",
+      "effect": "allow",
+      "id": "connector_UPDATE_admin",
+      "resource": "connector",
+      "role": "admin"
+    },
+    {
+      "action": "DELETE",
+      "condition": "actor.role == 'admin'",
+      "effect": "allow",
+      "id": "connector_DELETE_admin",
+      "resource": "connector",
+      "role": "admin"
+    },
+    {
+      "action": "CREATE",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "chat_message_CREATE_user",
+      "resource": "chat_message",
+      "role": "user"
+    },
+    {
+      "action": "READ",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "chat_message_READ_user",
+      "resource": "chat_message",
+      "role": "user"
+    },
+    {
+      "action": "READ",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "settings_READ_user",
+      "resource": "settings",
+      "role": "user"
+    },
+    {
+      "action": "UPDATE",
+      "condition": "actor.role == 'user' or actor.role == 'admin'",
+      "effect": "allow",
+      "id": "settings_UPDATE_user",
+      "resource": "settings",
+      "role": "user"
+    },
+    {
+      "action": "EXPORT",
+      "condition": "actor.role == 'admin'",
+      "effect": "allow",
+      "id": "settings_EXPORT_admin",
+      "resource": "settings",
+      "role": "admin"
+    },
+    {
+      "action": "IMPORT",
+      "condition": "actor.role == 'admin'",
+      "effect": "allow",
+      "id": "settings_IMPORT_admin",
+      "resource": "settings",
+      "role": "admin"
+    },
+    {
+      "action": "READ",
+      "condition": "actor.role == 'admin'",
+      "effect": "allow",
+      "id": "user_READ_admin",
+      "resource": "user",
+      "role": "admin"
+    },
+    {
+      "action": "UPDATE",
+      "condition": "actor.role == 'admin'",
+      "effect": "allow",
+      "id": "user_UPDATE_admin",
+      "resource": "user",
+      "role": "admin"
+    }
+  ],
+  "schemas": [
+    {
+      "description": "The central data entity representing any captured knowledge or work item.",
+      "id": "container",
+      "properties": {
+        "connectorId": {
+          "type": "string"
+        },
+        "contentBlocks": {
+          "type": "array"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "id": {
+          "required": true,
+          "type": "string"
+        },
+        "lifecycleState": {
+          "enum": [
+            "working",
+            "structured",
+            "durable",
+            "reactivated"
+          ],
+          "type": "string"
+        },
+        "movedToDeskAt": {
+          "type": "string"
+        },
+        "movedToLibraryAt": {
+          "type": "string"
+        },
+        "movedToStudioAt": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "relations": {
+          "type": "array"
+        },
+        "snippet": {
+          "type": "string"
+        },
+        "surface": {
+          "enum": [
+            "desk",
+            "studio",
+            "library"
+          ],
+          "type": "string"
+        },
+        "tags": {
+          "type": "array"
+        },
+        "title": {
+          "required": true,
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "note",
+            "document",
+            "invoice",
+            "task",
+            "link",
+            "image",
+            "audio",
+            "video",
+            "calendar_record"
+          ],
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "workflowState": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "description": "A STUDIO-specific entity for active authoring with structured content blocks and layout state.",
+      "id": "draft",
+      "properties": {
+        "containerId": {
+          "required": true,
+          "type": "string"
+        },
+        "contentBlocks": {
+          "type": "array"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "required": true,
+          "type": "string"
+        },
+        "layoutTemplate": {
+          "type": "string"
+        },
+        "structureMode": {
+          "type": "boolean"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "description": "An AI layout template applicable to drafts in STUDIO.",
+      "id": "template",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "id": {
+          "required": true,
+          "type": "string"
+        },
+        "layoutRules": {
+          "type": "object"
+        },
+        "name": {
+          "required": true,
+          "type": "string"
+        },
+        "rulesConfig": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "description": "An external data source integration that ingests items and creates containers.",
+      "id": "connector",
+      "properties": {
+        "id": {
+          "required": true,
+          "type": "string"
+        },
+        "lastSyncAt": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "webhookUrl": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "description": "A message in the AI chat panel.",
+      "id": "chat_message",
+      "properties": {
+        "actions": {
+          "type": "array"
+        },
+        "content": {
+          "type": "string"
+        },
+        "id": {
+          "required": true,
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "user",
+            "ai"
+          ],
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "description": "An authenticated user of the Organyz workspace.",
+      "id": "user",
+      "properties": {
+        "avatarUrl": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "id": {
+          "required": true,
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "user",
+            "admin"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    {
+      "description": "Application-level and user-level configuration settings.",
+      "id": "settings",
+      "properties": {
+        "exportedAt": {
+          "type": "string"
+        },
+        "id": {
+          "required": true,
+          "type": "string"
+        },
+        "navWidth": {
+          "type": "number"
+        },
+        "theme": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "sha": "4df742aabdba8f1d0df68dec3c3e073375c26c90c33589151128d3e4f73bf116",
+  "thresholds": [],
+  "version": "1.0.0",
+  "views": [
+    {
+      "description": "DESK room view showing containers in 'working' lifecycle state on the 'desk' surface.",
+      "fields": [
+        "id",
+        "title",
+        "snippet",
+        "type",
+        "workflowState",
+        "lifecycleState",
+        "tags",
+        "owner",
+        "updatedAt",
+        "relations"
+      ],
+      "filter": "resource.surface == 'desk' and resource.lifecycleState == 'working'",
+      "id": "desk_view",
+      "resource": "container"
+    },
+    {
+      "description": "STUDIO room view showing active drafts for containers in 'structured' lifecycle state.",
+      "fields": [
+        "id",
+        "containerId",
+        "contentBlocks",
+        "layoutTemplate",
+        "structureMode",
+        "updatedAt"
+      ],
+      "filter": "resource.lifecycleState == 'structured'",
+      "id": "studio_view",
+      "resource": "draft"
+    },
+    {
+      "description": "LIBRARY room view showing containers in 'durable' lifecycle state on the 'library' surface.",
+      "fields": [
+        "id",
+        "title",
+        "snippet",
+        "type",
+        "workflowState",
+        "lifecycleState",
+        "tags",
+        "owner",
+        "movedToLibraryAt",
+        "updatedAt"
+      ],
+      "filter": "resource.surface == 'library' and resource.lifecycleState == 'durable'",
+      "id": "library_view",
+      "resource": "container"
+    },
+    {
+      "description": "FIND room full-text and filtered search view across all containers.",
+      "fields": [
+        "id",
+        "title",
+        "snippet",
+        "type",
+        "workflowState",
+        "lifecycleState",
+        "surface",
+        "tags",
+        "owner",
+        "updatedAt"
+      ],
+      "filter": "true",
+      "id": "find_view",
+      "resource": "container"
+    },
+    {
+      "description": "Template picker modal view listing all available AI layout templates.",
+      "fields": [
+        "id",
+        "name",
+        "description",
+        "icon"
+      ],
+      "filter": "true",
+      "id": "template_picker_view",
+      "resource": "template"
+    },
+    {
+      "description": "Settings view for managing external connectors.",
+      "fields": [
+        "id",
+        "name",
+        "source",
+        "lastSyncAt",
+        "status"
+      ],
+      "filter": "true",
+      "id": "connector_settings_view",
+      "resource": "connector"
+    }
+  ],
+  "workflows": {
+    "workflows": [
+      {
+        "description": "Workflow for recovering from accidental deletion.",
+        "id": "accidental_deletion_recovery",
+        "steps": [
+          "Soft delete (30-day retention)",
+          "Restore from trash"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for using AI badges",
+        "id": "ai_badge_usage",
+        "steps": [
+          "Use for any AI-generated or AI-modified content",
+          "Gradient MUST match Design System v2.0 AI gradient",
+          "Icon + \"AI\" label always visible (never icon-only)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Auto-scroll to latest message",
+        "id": "ai_chat_auto_scroll",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Keyboard shortcuts for AI chat panel",
+        "id": "ai_chat_shortcuts",
+        "steps": [
+          "Enter: Send message",
+          "Shift + Enter: New line (in message)",
+          "\u2191: Previous message (edit)",
+          "Esc: Close chat"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Contextual actions provided with an AI message.",
+        "id": "ai_message_actions",
+        "steps": [
+          "Apply structure",
+          "Create outline",
+          "Split sections"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "When multiple container types score similarly, present the user with options to choose the correct type.",
+        "id": "ambiguous_type_resolution",
+        "steps": [
+          "Identify top 3 scoring types.",
+          "If the third-highest score is within 10 points of the highest score, mark as ambiguous.",
+          "Present primary and alternative types to the user.",
+          "User selects one of the suggested types."
+        ],
+        "triggers": []
+      },
+      {
+        "description": "All animations must follow these specifications.",
+        "id": "animation_system",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Applies a selected template to a draft, transforming its content blocks.",
+        "id": "apply_template",
+        "steps": [
+          "Retrieve draft and template",
+          "AI analyzes draft content to determine block types",
+          "Transform draft blocks based on template-specific layout rules",
+          "Update draft with new layout",
+          "Display success toast"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "User interacts with an approval prompt by approving or canceling an action.",
+        "id": "approval_prompt_interaction",
+        "steps": [
+          "User presented with action and consequence",
+          "User approves or cancels"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "All atomic components must follow these specifications for structure, tokens, states, and behavior.",
+        "id": "atomic_component_specification",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Badge components",
+        "id": "atoms_v2_0",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Attention Item component",
+        "id": "attention_item_rules",
+        "steps": [
+          "Border width matches classification severity (Conflict/Blocker = 4px, Pending = 2px)",
+          "Entire item clickable, navigates to container in correct room",
+          "Classification badge always uppercase",
+          "Background tint matches border color"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Handles 401 Unauthorized, 403 Forbidden, expired session.",
+        "id": "authorization_errors",
+        "steps": [
+          "prompt_log_in_again",
+          "prompt_request_access",
+          "prompt_contact_admin"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Automated synchronization processes.",
+        "id": "auto_sync",
+        "steps": [
+          "Background sync every 15 minutes",
+          "Webhook-based real-time sync (future)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for using danger buttons",
+        "id": "button_danger_usage",
+        "steps": [
+          "MUST be paired with ApprovalPrompt component (Toast Constitution v2.0)",
+          "Never use for non-destructive actions",
+          "Label must clearly state consequence (\"Delete\", \"Remove\", \"Invalidate\")"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for using primary buttons",
+        "id": "button_primary_usage",
+        "steps": [
+          "Use for primary actions only (1 per view maximum)",
+          "Label must be action-oriented verb (\"Save\", \"Continue\", \"Confirm\")",
+          "Never nest icons or complex elements inside primary buttons"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Actions triggered after a 'Calendar Record' type is detected.",
+        "id": "calendar_record_post_detection_actions",
+        "steps": [
+          "Parse date/time.",
+          "Offer calendar integration.",
+          "Add reminder options."
+        ],
+        "triggers": [
+          "calendar_record_type_detected"
+        ]
+      },
+      {
+        "description": "Two-step flow: type selection \u2192 details",
+        "id": "capture_modal_two_step_flow",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Complete specification for v2",
+        "id": "change_log_v2_0",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "User interacts with a clarification prompt by selecting an option or skipping it.",
+        "id": "clarification_prompt_interaction",
+        "steps": [
+          "User presented with question and options",
+          "User selects an option or skips"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Enable multiple users to edit templates simultaneously.",
+        "id": "collaborative_template_editing",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Click opens detail panel or navigates",
+        "id": "container_card_click_action",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Applies hover effects for container cards on desktop.",
+        "id": "container_card_hover_desk",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Hover state lifts card",
+        "id": "container_card_hover_state",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Applies hover effects for container cards in Studio (no lift).",
+        "id": "container_card_hover_studio",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Data schema",
+        "id": "container_data_model_v2_0",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Defines the allowed transitions between container lifecycle states.",
+        "id": "container_lifecycle_transitions",
+        "steps": [
+          "working \u2500\u2500move to STUDIO\u2500\u2500> structured",
+          "structured \u2500\u2500send to DESK\u2500\u2500> working",
+          "working \u2500\u2500archive\u2500\u2500> durable",
+          "durable \u2500\u2500reactivate\u2500\u2500> reactivated",
+          "reactivated \u2500\u2500[automatic]\u2500\u2500> working"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Determines the type of a container based on its content and title, with debouncing for performance.",
+        "id": "container_type_detection",
+        "steps": [
+          "Triggered by container creation, large content paste, file upload, or explicit user action.",
+          "Content is debounced for 1 second.",
+          "If debounced content exists and container type is not already set, detect container type.",
+          "Set the detected type."
+        ],
+        "triggers": [
+          "container_creation",
+          "content_paste_large",
+          "file_upload",
+          "user_click_detect_type_button"
+        ]
+      },
+      {
+        "description": "Suggested actions for a container with blockers.",
+        "id": "container_with_blocker_actions",
+        "steps": [
+          "View blockers",
+          "Add dependency",
+          "Request unblock",
+          "Change priority"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Suggested actions for a container with conflicts.",
+        "id": "container_with_conflict_actions",
+        "steps": [
+          "View conflicts",
+          "Resolve automatically",
+          "Mark as reviewed",
+          "Split into separate containers"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for scoring based on content indicators",
+        "id": "content_based_scoring",
+        "steps": [
+          "Indicator Matching: 10 points for each keyword from 'indicators' array found in content (case-insensitive, partial matches count)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Container card organism (detailed spec)",
+        "id": "content_card_v2_0",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Defines the context menu system for Organyz v2.",
+        "id": "context_menu_system",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Create container",
+        "id": "create_container",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Process for creating a custom SVG icon when Lucide alternatives are insufficient.",
+        "id": "custom_icon_creation",
+        "steps": [
+          "Use closest Lucide alternative",
+          "If no alternative, create custom SVG following Lucide style: 24x24 viewBox, 1.8px stroke width, Round line caps and joins, No fills (stroke only)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Allow users to create and save their own templates.",
+        "id": "custom_user_templates",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Workflow for recovering from data corruption.",
+        "id": "data_corruption_recovery",
+        "steps": [
+          "Restore from latest backup",
+          "Merge manual edits if possible"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Handles corrupted data, missing data, schema mismatch.",
+        "id": "data_errors",
+        "steps": [
+          "reload_data",
+          "contact_support",
+          "view_cached_version"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Initializes the room based on a 'room' query parameter in the URL.",
+        "id": "deep_link_room_initialization",
+        "steps": [
+          "parse URL search parameters",
+          "extract 'room' parameter",
+          "set room if parameter exists"
+        ],
+        "triggers": [
+          "on_page_load"
+        ]
+      },
+      {
+        "description": "Delete container",
+        "id": "delete_container",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Slides in from right (animation in Interaction Patterns v2.0)",
+        "id": "detail_panel_slide_in_animation",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Core function to detect container type based on content and block composition",
+        "id": "detect_container_type",
+        "steps": [
+          "concatenate title and block content",
+          "initialize scores for each CONTAINER_TYPE",
+          "check indicators in content for each type",
+          "check block composition for specific types (video, image, audio, link, note, document, invoice)",
+          "sort scores in descending order",
+          "return top scoring type if score > 10, otherwise default to 'note'"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for using the Divider component",
+        "id": "divider_component_usage",
+        "steps": [
+          "Use semantic <hr> element for accessibility",
+          "Margin adjusts based on context (default 24px)",
+          "Never use borders (only background color)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Manages the metadata and status of the document.",
+        "id": "document_control",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Defines the drag-drop specification for Organyz v2.",
+        "id": "drag_drop_specification",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Empty State component",
+        "id": "empty_state_rules",
+        "steps": [
+          "Icon always in circle background",
+          "Message conversational, not technical (see Empty States v1.0)",
+          "Action button optional (not all empty states need action)",
+          "Center-aligned, constrained width"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Handle errors gracefully, communicate clearly, and enable recovery.",
+        "id": "error_handling",
+        "steps": [
+          "Catch all errors, show recovery UI",
+          "Explain what happened in human terms",
+          "Always provide next steps"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Defines the canonical error handling strategy for Organyz v2, including error states, recovery flows, and user messaging.",
+        "id": "error_handling_strategy",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rollback and recovery patterns for error handling",
+        "id": "error_handling_v2_rollback_recovery",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Exports all application data (containers, drafts, settings) as a JSON file.",
+        "id": "export_all_data",
+        "steps": [
+          "Collect containers, drafts, and settings data",
+          "Add exportedAt timestamp",
+          "Convert data to JSON string",
+          "Create a Blob from the JSON string with application/json type",
+          "Create an object URL for the Blob",
+          "Create a temporary anchor element",
+          "Set href to the object URL",
+          "Set download filename to 'organyz-backup-[timestamp].json'",
+          "Programmatically click the anchor element to trigger download"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Fade in/out animation for modals, tooltips, toasts",
+        "id": "fade_in_out",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "User interacts with a failure prompt by retrying an action or dismissing the prompt.",
+        "id": "failure_prompt_interaction",
+        "steps": [
+          "User presented with explanation and context of failure",
+          "User retries or dismisses"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for File Badge component",
+        "id": "file_badge_rules",
+        "steps": [
+          "File type always uppercase",
+          "Icon matches file type semantically (see Atoms v2.0 \u00a75.4)",
+          "Multiple badges inline with 4px gap"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Handles file too large, unsupported format, upload timeout.",
+        "id": "file_upload_errors",
+        "steps": [
+          "suggest_smaller_file",
+          "suggest_convert_to_supported_format",
+          "suggest_retry_upload"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Filter Pill Group component",
+        "id": "filter_pill_group_rules",
+        "steps": [
+          "One active filter at a time (radio behavior)",
+          "Count badge optional, shown dimmed when present",
+          "Pills wrap on narrow screens",
+          "Active pill has filled background, inactive transparent"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Keyboard shortcuts for FIND actions",
+        "id": "find_shortcuts",
+        "steps": [
+          "/: Focus search",
+          "Cmd/Ctrl + F: Focus search (alternative)",
+          "Alt + T: Filter by type",
+          "Alt + W: Filter by workflow",
+          "Alt + G: Filter by tags"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Determine the confidence level based on the score",
+        "id": "get_confidence_level",
+        "steps": [
+          "score >= 50: 'high'",
+          "score >= 30: 'medium'",
+          "score >= 10: 'low'",
+          "score < 10: 'none'"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Get containers by surface (desk|studio|library)",
+        "id": "get_containers_by_surface",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Get single container",
+        "id": "get_single_container",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Hover lift effect for container cards",
+        "id": "hover_lift",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Defines the CSS transition for all hover effects.",
+        "id": "hover_transition",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for using the Icon component",
+        "id": "icon_component_usage",
+        "steps": [
+          "Never hard-code icon SVG paths in components",
+          "Size must be even numbers (14, 16, 18, 20, 24, etc.)",
+          "Color must be hex or design token variable"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Imports application data from a provided file.",
+        "id": "import_data",
+        "steps": [
+          "Create a FileReader",
+          "Define onload event handler:",
+          "Parse the file content as JSON",
+          "Set containers from imported data",
+          "Set drafts from imported data",
+          "Restore other state from imported data",
+          "Read the provided file as text"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Provide templates tailored for specific industries like legal, medical, or academic.",
+        "id": "industry_specific_templates",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Process for creating a new container from an external item via a connector.",
+        "id": "ingest_from_connector",
+        "steps": [
+          "Generate new container ID",
+          "Set container title from external item subject or title",
+          "Detect container type from source and external item",
+          "Set container snippet from external item preview or body",
+          "Assign connector ID as source",
+          "Assign external item ID as externalId",
+          "Add new container"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Actions triggered after an 'Invoice' type is detected.",
+        "id": "invoice_post_detection_actions",
+        "steps": [
+          "Offer to extract line items.",
+          "Suggest total calculation.",
+          "Add payment terms template."
+        ],
+        "triggers": [
+          "invoice_type_detected"
+        ]
+      },
+      {
+        "description": "Actions triggered after a 'Link' type is detected.",
+        "id": "link_post_detection_actions",
+        "steps": [
+          "Fetch page metadata (title, description, image).",
+          "Display link preview.",
+          "Archive webpage content."
+        ],
+        "triggers": [
+          "link_type_detected"
+        ]
+      },
+      {
+        "description": "List all containers",
+        "id": "list_all_containers",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Blocks all interaction",
+        "id": "loading_overlay_interaction_block",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "User-initiated synchronization process.",
+        "id": "manual_sync",
+        "steps": [
+          "User clicks \"Sync Now\"",
+          "Fetches new items since last sync"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Check if the top score meets the minimum confidence threshold",
+        "id": "minimum_score_check",
+        "steps": [
+          "If topScore < 10, default to 'Note'"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Backdrop blocks interaction with page",
+        "id": "modal_backdrop_interaction_block",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Click outside closes modal (unless critical action)",
+        "id": "modal_click_outside_close",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "ESC key closes modal",
+        "id": "modal_esc_key_close",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Workflow for managing focus when a modal opens and closes.",
+        "id": "modal_focus_management",
+        "steps": [
+          "Save current focus",
+          "Move focus to modal",
+          "Trap focus in modal",
+          "Restore focus on close"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Describes the lifecycle of a modal from opening to closing based on user action.",
+        "id": "modal_lifecycle",
+        "steps": [
+          "Open",
+          "User Action",
+          "Close"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Backdrop fade and modal scale for opening/closing modals",
+        "id": "modal_open_close",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Keyboard shortcuts for modal dialogs",
+        "id": "modal_shortcuts",
+        "steps": [
+          "Esc: Close modal",
+          "Enter: Confirm/Submit (if primary action)",
+          "Cmd/Ctrl + Enter: Force submit",
+          "Tab: Next field",
+          "Shift + Tab: Previous field"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for creating molecules",
+        "id": "molecule_rules",
+        "steps": [
+          "Atoms only",
+          "Single purpose",
+          "Context-agnostic",
+          "Prop-driven"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Simple composite components",
+        "id": "molecules_v2_0",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Function to transition a container to the 'durable' state and 'library' surface.",
+        "id": "move_to_library",
+        "steps": [
+          "Update container's lifecycleState to 'durable'",
+          "Update container's surface to 'library'",
+          "Set movedToLibraryAt timestamp",
+          "Display success toast",
+          "Set room to 'LIBRARY'"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Function to transition a container to the 'structured' state and 'studio' surface.",
+        "id": "move_to_studio",
+        "steps": [
+          "Update container's lifecycleState to 'structured'",
+          "Update container's surface to 'studio'",
+          "Set movedToStudioAt timestamp",
+          "Display success toast",
+          "Set room to 'STUDIO'"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Support templates that span multiple pages or views.",
+        "id": "multi_page_templates",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Nav Item component",
+        "id": "nav_item_rules",
+        "steps": [
+          "Icon always visible (even when collapsed)",
+          "Label only visible when expanded",
+          "Active state persists (doesn't clear on hover out)",
+          "Use semantic icons (desk \u2192 DESK, home \u2192 HOME, etc.)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Handles API timeout, connection lost, 5xx server errors.",
+        "id": "network_errors",
+        "steps": [
+          "display_user_message",
+          "offer_retry_button",
+          "offer_offline_mode",
+          "offer_contact_support_link"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Suggested actions for a new (provisional) container.",
+        "id": "new_container_actions",
+        "steps": [
+          "Set workflow state",
+          "Add to collection",
+          "Tag with topic",
+          "Assign owner"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Organisms are composed from molecules and atoms.",
+        "id": "organism_composition",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Organisms may assume parent context (unlike molecules).",
+        "id": "organism_contextual",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Each organism is a complete UI section (sidebar, panel, header, etc.).",
+        "id": "organism_sectional",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Organisms can be rendered in isolation for testing.",
+        "id": "organism_standalone_rendering",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Organism-level specification",
+        "id": "organisms_v2_0",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Handles the close action for the panel header.",
+        "id": "panel_header_on_close",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Transition for resizable panels",
+        "id": "panel_resize",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Applies hover effect for primary buttons.",
+        "id": "primary_button_hover",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Function to transition a container to the 'reactivated' state and 'desk' surface.",
+        "id": "reactivate_to_desk",
+        "steps": [
+          "Update container's lifecycleState to 'reactivated'",
+          "Update container's surface to 'desk'",
+          "Set movedToDeskAt timestamp",
+          "Display success toast",
+          "Set room to 'DESK'"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Handles the resize action for the resize handle.",
+        "id": "resize_handle_on_resize",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Fade out current room, fade in new room",
+        "id": "room_change",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Manages the history of visited rooms and provides functions to navigate forward and backward.",
+        "id": "room_navigation",
+        "steps": [
+          "add current room to history",
+          "set current room",
+          "remove last room from history",
+          "set current room to previous"
+        ],
+        "triggers": [
+          "navigateTo(newRoom)",
+          "goBack()"
+        ]
+      },
+      {
+        "description": "Rules for Room Selector Pills component",
+        "id": "room_selector_pills_rules",
+        "steps": [
+          "Container has border, pills have no border",
+          "Active pill uses primary button styling",
+          "Pills always inline, wrap if needed",
+          "Minimum 2 pills, maximum 6"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Room-specific card usage",
+        "id": "room_specifications",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Scale up/down animation for modals appearing/disappearing",
+        "id": "scale_up_down",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Search Bar component",
+        "id": "search_bar_rules",
+        "steps": [
+          "Clear button only appears when query not empty",
+          "Search icon always visible",
+          "Input expands to fill container width",
+          "Focus ring on input (not wrapper)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Search containers",
+        "id": "search_containers",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Applies hover effect for secondary buttons.",
+        "id": "secondary_button_hover",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Workflow for sending a user message and simulating an AI response.",
+        "id": "send_message",
+        "steps": [
+          "Add user message to state",
+          "Clear chat input",
+          "Show typing indicator",
+          "Simulate AI response after a delay",
+          "Add AI response to state",
+          "Hide typing indicator"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Session Card component",
+        "id": "session_card_rules",
+        "steps": [
+          "Left border color matches room color (DESK = blue, STUDIO = emerald)",
+          "Room name always uppercase",
+          "Entire card clickable",
+          "Hover changes border color opacity"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Shimmer animation for skeleton loaders",
+        "id": "shimmer_loading",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Transition smoothly between states (200ms cubic-bezier)",
+        "id": "sidebar_transition",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for using the Skeleton component",
+        "id": "skeleton_component_usage",
+        "steps": [
+          "Use during data fetching, never as decoration",
+          "Match skeleton shape to expected content",
+          "Remove immediately when real content loads"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Slide in/out animation for right panels, sidebars, toasts",
+        "id": "slide_in_out",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Spin animation for loading spinners",
+        "id": "spin",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Stat Card component",
+        "id": "stat_card_rules",
+        "steps": [
+          "Value always larger than label",
+          "Entire card is clickable (navigates to dest)",
+          "Hover lifts card subtly (translateY: -2px)",
+          "Color accents only on value, never on background"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for scoring based on structural elements",
+        "id": "structure_based_scoring",
+        "steps": [
+          "Media Content: 50 points if video blocks are present (Video type)",
+          "Media Content: 50 points if audio blocks are present (Audio type)",
+          "Image Density: 40 points if 3+ image blocks are present (Image type)",
+          "Link Density: 30 points if 3+ URLs in content (Hyperlink type)",
+          "Length-Based: 20-25 points bias for short content (<200 chars, <=2 blocks) (Note type)",
+          "Length-Based: 20-25 points bias for long content (>500 chars, 3+ blocks) (Document type)",
+          "Financial Indicators: 30 points if currency symbols or 'total' keyword (Invoice type)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Keyboard shortcuts for STUDIO actions",
+        "id": "studio_shortcuts",
+        "steps": [
+          "Cmd/Ctrl + B: Add text block",
+          "Cmd/Ctrl + I: Add image block",
+          "Cmd/Ctrl + L: Add link block",
+          "Cmd/Ctrl + Shift + S: Send to DESK",
+          "Cmd/Ctrl + Shift + T: AI transform",
+          "Space: Preview mode"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "AI suggests a template based on the content of the draft blocks.",
+        "id": "suggest_template",
+        "steps": [
+          "Extract content from draft blocks",
+          "Analyze content for keywords indicating template type (invoice, letter, report)",
+          "Return suggested template ID or default to 'article'"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Actions triggered after a 'Task' type is detected.",
+        "id": "task_post_detection_actions",
+        "steps": [
+          "Add checkbox.",
+          "Suggest due date.",
+          "Offer assignment to person."
+        ],
+        "triggers": [
+          "task_type_detected"
+        ]
+      },
+      {
+        "description": "A platform for users to share and discover templates.",
+        "id": "template_marketplace",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Full page layouts",
+        "id": "templates_v2_0",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for using text inputs",
+        "id": "text_input_usage",
+        "steps": [
+          "Always include aria-label or visible <label>",
+          "Show error state via aria-invalid and error message below",
+          "Placeholder text must use --ink5 color"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Auto-dismiss after duration",
+        "id": "toast_auto_dismiss",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Toast Notification component",
+        "id": "toast_notification_rules",
+        "steps": [
+          "Toast slides in from top-right",
+          "Auto-dismisses after duration ms (default 4000)",
+          "User can manually dismiss with X button",
+          "Left border accent matches type",
+          "Conversational messaging (see Toast Constitution v2.0)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Slide-in animation from right",
+        "id": "toast_slide_in_animation",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Update container",
+        "id": "update_container",
+        "steps": [],
+        "triggers": []
+      },
+      {
+        "description": "Complete specification for v2",
+        "id": "v2.0",
+        "steps": [
+          "Defined duration scale",
+          "Documented all standard animations",
+          "Added reduced motion support",
+          "Specified performance guidelines"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Handles invalid input, missing required fields, format errors.",
+        "id": "validation_errors",
+        "steps": [
+          "highlight_invalid_field",
+          "show_inline_error_message",
+          "focus_invalid_field"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for Workflow + Lifecycle Badge Pair component",
+        "id": "workflow_lifecycle_badge_pair_rules",
+        "steps": [
+          "Workflow badge first (larger), lifecycle second (smaller)",
+          "6px gap between badges",
+          "Both inline, wrap together if needed",
+          "Lifecycle badge has no border (subtler)"
+        ],
+        "triggers": []
+      },
+      {
+        "description": "Rules for using workflow state badges",
+        "id": "workflow_state_badge_usage",
+        "steps": [
+          "Never invent new workflow states",
+          "Label must match canonical labels (see Workflow State Constitution v2.0)",
+          "Color coding is semantic, not decorative"
+        ],
+        "triggers": []
+      }
+    ]
+  }
+}
